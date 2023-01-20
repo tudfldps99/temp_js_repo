@@ -43,8 +43,10 @@
         //이벤트 핸들러
         const activate = e => {
 
-            //이벤트 발생 타겟을 제한
-            if (!e.target.matches('#fruits > li')) {
+            // 버블링 사용 시 주의사항
+            // : ul에게 이벤트를 걸었기 때문에 순수한 ul 영역을 클릭하면 이상해짐
+            // --> 이벤트 발생 타겟을 제한
+            if (!e.target.matches('#fruits > li')) {    // event가 터진 타켓이 li 태그와 매치하지 않는다면 return
                 return;
             }
 
@@ -66,10 +68,15 @@
         };
 
         //이벤트 핸들러 바인딩
-        // for (let $li of [...$fruits.children]) {
-        //     $li.onclick = activate;
-        // }
+        /*
+        for (let $li of [...$fruits.children]) {
+            $li.onclick = activate;     // <li>태그 하나하나나에 이벤트 걸어둠
+        }
+        */
 
+        // 만약 동적으로 데이터가 생성된다면, 생성되는 새로운 데이터에도 onclick 이벤트가 적용되어야하는데,
+        // 이벤트의 [bubbling] 효과를 이용한다면 새로운 데이터의 onclick 이벤트를 따로 신경쓰지 않아도 자동으로 적용됨 --> 6.이벤트위임2.html 예시
+        
         //ul에 이벤트부여 후 버블링 사용
         $fruits.onclick = activate;
 

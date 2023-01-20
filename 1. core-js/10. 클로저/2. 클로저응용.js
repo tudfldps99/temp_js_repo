@@ -1,10 +1,10 @@
 /*
-const increase = (() => {
+const increase = (() => {        // 함수를 return 받음 --> function
     let num = 0; // 상태 변수
     return () => ++num;
 })();
 
-const decrease = (() => {
+const decrease = (() => {       // 함수를 return 받음 --> function
     let num = 0; // 상태 변수
     return () => --num;
 })();
@@ -18,10 +18,13 @@ console.log(increase()); // 2
 
 */
 
-const c = (function() {
+// 한번에 두개의 함수 모두 return 하는 방법
+const c = (function() {     // 함수가 들어있는 객체 return 받음 --> object ===> c.increase() 로 호출해야 함
     let num = 0;
 
-    return {
+    // 겍체를 return
+    return {    
+        // 키:값 형태 --> 값에 들어가는 형태는 정해진게 없음
         increase: () => ++num,
         decrease: () => --num
     };
@@ -55,8 +58,6 @@ const counter = (function() {
     }
     return def;
 })();
-
-
 
 let n = counter(m => m += 3);
 

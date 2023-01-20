@@ -44,7 +44,9 @@
         document.querySelector('.root').onclick = e => alert('root');
         document.querySelector('.parent').onclick = e => alert('parent');
         document.querySelector('.child').onclick = e => {
-            e.stopPropagation();
+            e.stopPropagation();        // 선동을 멈춰라 --> 본인것만 이벤트 발생 후 끝남
+                                        // bubbling의 장점? 왜 따로 stop 하는걸 만들었을까?
+                                        // 5. 이벤트위임1.html 참고
             alert('child');
         };
         document.querySelector('.target').onclick = e => {

@@ -27,7 +27,8 @@
         }
         */
 
-        $btn.addEventListener('click', hello);
+        // 이벤트 중첩 시 사용
+        $btn.addEventListener('click', hello);      // 'on'을 붙이지않고, 문자열로 표현
         $btn.addEventListener('click', function() {
             $btn.style.background = 'aqua';
         });

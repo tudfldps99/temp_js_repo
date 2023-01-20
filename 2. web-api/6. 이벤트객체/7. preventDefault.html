@@ -20,13 +20,13 @@
 
         $link.onclick = e => {
             if (!confirm('정말로 이동할까요?')) {
-                e.preventDefault(); //기본기능 중단
+                e.preventDefault();     // 기본 기능(a태그의 링크 이동기능) 중단
             } 
         };
 
         const $subBtn = document.getElementById('check');
         $subBtn.onclick = e => {
-            e.preventDefault();
+            e.preventDefault();     // 입력감 검증 시에도 쓰임
 
             const $input = $subBtn.previousElementSibling;
             if ($input.value === '') {

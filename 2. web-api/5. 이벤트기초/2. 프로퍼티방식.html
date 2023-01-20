@@ -18,22 +18,24 @@
             alert('안녕하세요!');
         }
 
-        const [$b1, $b2, $b3] = [...document.querySelectorAll('button')];
+        const [$b1, $b2, $b3] = [...document.querySelectorAll('button')];   // 태그 이름이 button인 것들 모두 가져오기 ==> 배열
 
-        $b1.onclick = sayHello;
+        $b1.onclick = sayHello;         // 이벤트 위임 : 브라우저에게 b1 클릭 시 onclick 호출하도록 시킴
         $b2.onclick = function() {
             $b2.style.width= '150px';
         };
-        $b3.onmouseenter = () => {
+        $b3.onmouseenter = () => { 
             $b3.style.background = 'red';
         };
         $b3.onmouseleave = () => {
             $b3.style.background = 'yellow';
         };
-        $b3.onmouseleave = sayHello;
 
-        //이벤트핸들러 제거
-        $b3.onmouseenter = null;
+        // property 방식 특징 : 하나의 이벤트 타입에 두개의 핸들러 못붙임. 기존 핸들러가 없어지고 교체됨
+        $b3.onmouseleave = sayHello;    // -> yellow로 변경 안됨
+
+        // //이벤트핸들러 제거
+        // $b3.onmouseenter = null;
 
     </script>
 

@@ -18,14 +18,15 @@
 
     <script>
 
-        // const $grape = document.querySelector('.grape');
+                                    // Selector : 선택자
+        // const $grape = document.querySelector('.grape');     // -> class 값 가져옴
         // const $grape = document.querySelector('#fruits > li:nth-child(3)');
-        const $grape = document.querySelector('.banana + li');
+        const $grape = document.querySelector('.banana + li');      // 형이 바나나인 것 : 포도
         console.log($grape);
 
         $grape.textContent = '맛있는 포도';
 
-        const $elems = document.querySelectorAll('.fr');
+        const $elems = document.querySelectorAll('.fr');        // 클래스가 fr인 것 보두 가져와서 배열로 표현
         console.log($elems);
 
         /*

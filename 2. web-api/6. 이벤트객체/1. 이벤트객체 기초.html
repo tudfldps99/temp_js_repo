@@ -12,13 +12,18 @@
     <em class="msg"></em>
 
     <script>
-
-        document.onclick = function(e) {
+        /*
+        document.onclick = function(e) {        // document.onclick : 브라우저 전체 클릭 가능
             console.log(e);
             const $msg = document.querySelector('.msg');
             $msg.textContent = `x: ${e.x}, y: ${e.y}`;
         };
+        */
 
+        document.onclick = function({x, y}) {        // document.onclick : 브라우저 전체 클릭 가능
+            const $msg = document.querySelector('.msg');
+            $msg.textContent = `x: ${x}, y: ${y}`;
+        };
     </script>
 
 </body>
